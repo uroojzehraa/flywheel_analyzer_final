@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flywheel analyzer – Physics Calculator</title>
+<meta name="description" content="A professional web calculator to determine moment of inertia of a flywheel with visual simulation and physics concepts.">
+<meta name="keywords" content="flywheel, inertia, physics project, calculator, GitHub Pages, modulator, urooj zehra">
+  <meta charset="UTF-8" />
+  <title>Flywheel analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1 style="font size: 2.5rem; color: #333;">Flywheel Analyzer</h1>
+    <p>An interactive tool to visualize and calculate moment of inertia</p>
+    
+  </header>
+
+  <section id="explanation">
+    <h2>Concept Overview</h2>
+    <div class="card-container" id="cards">
+      <!-- Visual explanation cards will be added here via JS -->
+    </div>
+  </section>
+
+  <section id="calculator">
+
+    <h2>Input Section</h2>
+   <label title="Mass attached to the string (in kilograms)">
+  Mass (kg): <input type="number" id="mass" />
+</label>
+<br>
+<label title="Height fallen before detachment (meters)">
+  Height (m): <input type="number" id="height" />
+</label>
+<br>
+
+<label title="Radius of the axle (in meters)">
+  Radius (m): <input type="number" id="radius" />
+</label>
+<br>
+
+<label title="Turns of the string around axle before fall">
+  Turns on Axle (n₁): <input type="number" id="n1" />
+</label>
+<br>
+
+<label title="Rotations made by flywheel after detachment">
+  Post Detach Rotations (n₂): <input type="number" id="n2" />
+</label>
+<br>
+
+<label title="Time taken by the flywheel to stop after detachment">
+  Time (s): <input type="number" id="time" />
+</label>
+<br>
+
+    <button onclick="calculate()">Calculate</button>
+  </section>
+
+  <section id="animation">
+    <h2>Flywheel Animation</h2>
+    <div id="wheel-container">
+  <img src="flywheel.png" id="wheel" />
+</div>
+
+  </section>
+
+  <section id="graph">
+    <h2>Angular Speed vs Time</h2>
+    <canvas id="omegaChart" width="400" height="200"></canvas>
+  </section>
+
+  <section id="output">
+    <h2>Result</h2>
+    <p id="resultBox">Enter values and click Calculate.</p>
+    <button onclick="downloadResult()">Download Result</button>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
